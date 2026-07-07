@@ -1,1 +1,217 @@
-{}
+{
+  "https://www.amazon.co.jp/dp/B08XVZFBY9": {
+    "name": "MG ガンダムF91 Ver.2.0 [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:53:44"
+  },
+  "https://www.amazon.co.jp/dp/B000RHKZLU": {
+    "name": "MG ターンエーガンダム [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:53:49"
+  },
+  "https://www.amazon.co.jp/dp/B00J4G4FNE": {
+    "name": "MG ターンエックス [Amazon]",
+    "status": "in_stock",
+    "checked_at": "2026-07-07T07:53:52"
+  },
+  "https://www.amazon.co.jp/dp/B0D5XRM3TV": {
+    "name": "MGSD ウイングガンダムゼロEW [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:53:54"
+  },
+  "https://p-bandai.jp/item/item-1000222394/": {
+    "name": "MGSD ウイングガンダムゼロEW [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:53:58"
+  },
+  "https://www.amazon.co.jp/dp/B079DL99KC": {
+    "name": "RG トールギスEW(標準版) [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:54:01"
+  },
+  "https://p-bandai.jp/item/item-1000150058/": {
+    "name": "RG トールギスEW(標準版) [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:54:04"
+  },
+  "https://p-bandai.jp/item/item-1000236968/": {
+    "name": "RG トールギスII(プレバン限定) [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:54:07"
+  },
+  "https://p-bandai.jp/item/item-1000225002/": {
+    "name": "RG トールギスIII(プレバン限定) [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:54:10"
+  },
+  "https://www.amazon.co.jp/dp/B07HF9NXP2": {
+    "name": "RG トールギスEW[チタニウムフィニッシュ] [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:54:13"
+  },
+  "https://p-bandai.jp/item/item-1000128332/": {
+    "name": "RG トールギスEW[チタニウムフィニッシュ] [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:54:16"
+  },
+  "https://p-bandai.jp/item/item-1000164563/": {
+    "name": "RG トールギスIII[チタニウムフィニッシュ](プレバン限定) [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:54:20"
+  },
+  "https://www.amazon.co.jp/dp/B083KLVSCX": {
+    "name": "RG フォースインパルスガンダム(通常版) [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:54:23"
+  },
+  "https://p-bandai.jp/item/item-1000148163/": {
+    "name": "RG フォースインパルスガンダム(通常版) [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:54:27"
+  },
+  "https://www.amazon.co.jp/dp/B0CKDYX776": {
+    "name": "RG フォースインパルスガンダム SpecII [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:54:29"
+  },
+  "https://p-bandai.jp/item/item-1000208054/": {
+    "name": "RG フォースインパルスガンダム SpecII [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:54:32"
+  },
+  "https://www.amazon.co.jp/dp/B01LX4WDRM": {
+    "name": "RG ビルドストライクガンダム フルパッケージ [Amazon]",
+    "status": "in_stock_overpriced",
+    "checked_at": "2026-07-07T07:54:36"
+  },
+  "https://p-bandai.jp/item/item-1000142642/": {
+    "name": "RG ビルドストライクガンダム フルパッケージ [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:54:39"
+  },
+  "https://www.amazon.co.jp/dp/B0DXDWG6WG": {
+    "name": "RG ウイングガンダムゼロ(アニメ版) [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:54:41"
+  },
+  "https://p-bandai.jp/item/item-1000238314/": {
+    "name": "RG ウイングガンダムゼロ(アニメ版) [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:54:44"
+  },
+  "https://www.amazon.co.jp/dp/B0CTBLDWWK": {
+    "name": "HG インフィニットジャスティスガンダム弐式 [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:54:46"
+  },
+  "https://p-bandai.jp/item/item-1000213431/": {
+    "name": "HG インフィニットジャスティスガンダム弐式 [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:54:49"
+  },
+  "https://www.amazon.co.jp/dp/B07CGMG5GY": {
+    "name": "HGUC グフ・フライトタイプ(通常色/プレバン限定) [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:54:51"
+  },
+  "https://p-bandai.jp/item/item-1000126777/": {
+    "name": "HGUC グフ・フライトタイプ(通常色/プレバン限定) [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:54:54"
+  },
+  "https://www.amazon.co.jp/dp/B0F9FXZ4N7": {
+    "name": "HG グフ・フライトタイプ[21stCENTURY REAL TYPE Ver.](ガンダムベース限定) [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:54:56"
+  },
+  "https://www.gundam-base.net/products/details.php?path=01_2459": {
+    "name": "HG グフ・フライトタイプ[21stCENTURY REAL TYPE Ver.](ガンダムベース限定) [GUNDAM SIDE-F]",
+    "status": "out_of_stock",
+    "checked_at": "2026-07-07T07:54:59"
+  },
+  "https://www.amazon.co.jp/dp/B07CNH9QDD": {
+    "name": "MG ジェガン [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:55:02"
+  },
+  "https://www.amazon.co.jp/dp/B0FPPWPXL9": {
+    "name": "RE/100 デナン・ゲー(プレバン限定) [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:55:05"
+  },
+  "https://p-bandai.jp/item/item-1000236998/": {
+    "name": "RE/100 デナン・ゲー(プレバン限定) [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:55:08"
+  },
+  "https://www.amazon.co.jp/dp/B00LGBMHZI": {
+    "name": "HGBF ガンダムフェニーチェリナーシタ [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:55:11"
+  },
+  "https://p-bandai.jp/item/item-1000129065/": {
+    "name": "HGBF ガンダムフェニーチェリナーシタ [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:55:15"
+  },
+  "https://www.amazon.co.jp/dp/B00VJKHPJO": {
+    "name": "MG ガンダムフェニーチェリナーシタ [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:55:17"
+  },
+  "https://www.amazon.co.jp/dp/B07P5QVBKJ": {
+    "name": "RG クロスボーンガンダムX1 [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:55:20"
+  },
+  "https://p-bandai.jp/item/item-1000142328/": {
+    "name": "RG クロスボーンガンダムX1 [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:55:23"
+  },
+  "https://www.amazon.co.jp/dp/B018TGV5EG": {
+    "name": "HG ドム試作実験機(THE ORIGIN関連 MSDシリーズ) [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:55:26"
+  },
+  "https://p-bandai.jp/item/item-1000134566/": {
+    "name": "HG ドム試作実験機(THE ORIGIN関連 MSDシリーズ) [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:55:29"
+  },
+  "https://www.amazon.co.jp/dp/B07B3KQHT5": {
+    "name": "RE/100 ビギナ・ギナ [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:55:32"
+  },
+  "https://www.amazon.co.jp/dp/B00IP5QQ9Q": {
+    "name": "HGBF クロスボーンガンダム魔王 [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:55:34"
+  },
+  "https://www.amazon.co.jp/dp/B07KZD2TV9": {
+    "name": "MG ガンダムAGEIIマグナム(ビルドダイバーズ) [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:55:38"
+  },
+  "https://p-bandai.jp/item/item-1000249649/": {
+    "name": "MG ガンダムAGEIIマグナム(ビルドダイバーズ) [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:55:41"
+  },
+  "https://www.amazon.co.jp/dp/B00KRVJC2O": {
+    "name": "RE/100 ナイチンゲール [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:55:43"
+  },
+  "https://p-bandai.jp/item/item-1000093127/": {
+    "name": "RE/100 ナイチンゲール [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:55:45"
+  },
+  "https://www.amazon.co.jp/dp/B092RMH6WD": {
+    "name": "HGUC ナイチンゲール [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T07:55:48"
+  }
+}
