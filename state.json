@@ -71,8 +71,8 @@
   },
   "https://www.amazon.co.jp/dp/B0CKDYX776": {
     "name": "RG フォースインパルスガンダム SpecII [Amazon]",
-    "status": "unknown",
-    "checked_at": "2026-07-07T07:54:29"
+    "status": "in_stock",
+    "checked_at": "2026-07-07T19:27:18"
   },
   "https://p-bandai.jp/item/item-1000208054/": {
     "name": "RG フォースインパルスガンダム SpecII [プレミアムバンダイ]",
@@ -191,8 +191,8 @@
   },
   "https://www.amazon.co.jp/dp/B07KZD2TV9": {
     "name": "MG ガンダムAGEIIマグナム(ビルドダイバーズ) [Amazon]",
-    "status": "in_stock",
-    "checked_at": "2026-07-07T13:09:46"
+    "status": "unknown",
+    "checked_at": "2026-07-07T19:28:23"
   },
   "https://p-bandai.jp/item/item-1000249649/": {
     "name": "MG ガンダムAGEIIマグナム(ビルドダイバーズ) [プレミアムバンダイ]",
@@ -213,5 +213,25 @@
     "name": "HGUC ナイチンゲール [Amazon]",
     "status": "unknown",
     "checked_at": "2026-07-07T07:55:48"
+  },
+  "https://www.amazon.co.jp/BANDAI-SPIRITS-バンダイ-スピリッツ-ガンダムバルバトスルプス/dp/B0FBLRWDY4": {
+    "name": "MG ガンダムバルバトスルプス [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T19:28:37"
+  },
+  "https://p-bandai.jp/item/item-1000241880/": {
+    "name": "MG ガンダムバルバトスルプス [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T19:28:39"
+  },
+  "https://p-bandai.jp/item/item-1000236997/": {
+    "name": "MG トールギスF EW(プレバン限定) [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T19:28:40"
+  },
+  "https://p-bandai.jp/item/item-1000253883/": {
+    "name": "RE/100 ビギナ・ギナ【2026年12月発送】 [プレミアムバンダイ]",
+    "status": "unknown",
+    "checked_at": "2026-07-07T19:28:43"
   }
 }
