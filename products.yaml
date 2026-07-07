@@ -1,0 +1,14 @@
+# 監視したい商品をここに追加してください。
+# name: Discord通知に表示される商品名（自由に決めてOK）
+# url : 商品ページのURL（Amazon.co.jp / ヨドバシ.com / ホビーサーチ(1999.co.jp) / プレミアムバンダイ に対応）
+#
+# 一時的に監視を止めたい場合は disabled: true を追加してください。
+
+products:
+  - name: "サンプル: HG 001 ガンダム"
+    url: "https://www.amazon.co.jp/dp/XXXXXXXXXX"
+    disabled: true
+
+  - name: "サンプル: MG ○○ Ver.Ka"
+    url: "https://www.1999.co.jp/itembig/XXXXXXXX"
+    disabled: true
