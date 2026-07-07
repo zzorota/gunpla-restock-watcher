@@ -11,8 +11,8 @@
   },
   "https://www.amazon.co.jp/dp/B00J4G4FNE": {
     "name": "MG ターンエックス [Amazon]",
-    "status": "in_stock",
-    "checked_at": "2026-07-07T07:53:52"
+    "status": "unknown",
+    "checked_at": "2026-07-07T13:07:59"
   },
   "https://www.amazon.co.jp/dp/B0D5XRM3TV": {
     "name": "MGSD ウイングガンダムゼロEW [Amazon]",
@@ -81,8 +81,8 @@
   },
   "https://www.amazon.co.jp/dp/B01LX4WDRM": {
     "name": "RG ビルドストライクガンダム フルパッケージ [Amazon]",
-    "status": "in_stock_overpriced",
-    "checked_at": "2026-07-07T07:54:36"
+    "status": "unknown",
+    "checked_at": "2026-07-07T13:08:42"
   },
   "https://p-bandai.jp/item/item-1000142642/": {
     "name": "RG ビルドストライクガンダム フルパッケージ [プレミアムバンダイ]",
@@ -191,8 +191,8 @@
   },
   "https://www.amazon.co.jp/dp/B07KZD2TV9": {
     "name": "MG ガンダムAGEIIマグナム(ビルドダイバーズ) [Amazon]",
-    "status": "unknown",
-    "checked_at": "2026-07-07T07:55:38"
+    "status": "in_stock",
+    "checked_at": "2026-07-07T13:09:46"
   },
   "https://p-bandai.jp/item/item-1000249649/": {
     "name": "MG ガンダムAGEIIマグナム(ビルドダイバーズ) [プレミアムバンダイ]",
