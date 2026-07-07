@@ -5,9 +5,12 @@
 セレクタを調整してください。
 """
 
+import re
 from urllib.parse import urlparse
 
 from bs4 import BeautifulSoup
+
+_PRICE_RE = re.compile(r"(?:¥|￥)\s?([\d,]{3,8})|([\d,]{3,8})\s?円(?:\(税込\))?")
 
 NEGATIVE_KEYWORDS = [
     "売り切れ",
@@ -156,3 +159,26 @@ def get_status(url: str, html: str) -> str:
     domain = urlparse(url).netloc.lower()
     checker = _DOMAIN_CHECKERS.get(domain, _generic)
     return checker(html)
+
+
+def extract_price(html: str) -> int | None:
+    """ページ内で最初に見つかった、それらしい価格(円)を返す。
+
+    サイトごとの価格欄の場所までは特定していないベストエフォート実装。
+    転売・プレミア価格の商品は本文中にも定価が併記されていることがあるため
+    完全ではない点に注意（うまく効かない場合は products.yaml の max_price を
+    調整するか、ここに個別サイト向けの抽出処理を追加する）。
+    """
+    soup = BeautifulSoup(html, "html.parser")
+    text = soup.get_text(" ", strip=True)
+    for m in _PRICE_RE.finditer(text):
+        raw = m.group(1) or m.group(2)
+        if not raw:
+            continue
+        try:
+            value = int(raw.replace(",", ""))
+        except ValueError:
+            continue
+        if 300 <= value <= 300000:
+            return value
+    return None

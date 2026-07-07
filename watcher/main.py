@@ -14,7 +14,7 @@ from pathlib import Path
 import requests
 import yaml
 
-from watcher.checkers import get_status
+from watcher.checkers import extract_price, get_status
 from watcher.notifier import send_discord
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
@@ -81,7 +81,15 @@ def main() -> None:
             print(f"[ERROR] {name}: {e}")
             continue
 
-        print(f"[CHECK] {name}: {prev_status} -> {status}")
+        max_price = product.get("max_price")
+        price = None
+        if status == "in_stock" and max_price is not None:
+            price = extract_price(html)
+            if price is not None and price > max_price:
+                status = "in_stock_overpriced"
+
+        price_info = f" price=¥{price:,}" if price is not None else ""
+        print(f"[CHECK] {name}: {prev_status} -> {status}{price_info}")
 
         if status == "blocked" and prev_status != "blocked":
             send_discord(
@@ -93,8 +101,13 @@ def main() -> None:
             "out_of_stock",
             "unknown",
             "blocked",
+            "in_stock_overpriced",
         ):
-            send_discord(webhook_url, f"🎉「{name}」が入荷/再販されました!\n{url}")
+            price_note = f"（¥{price:,}）" if price is not None else ""
+            send_discord(
+                webhook_url,
+                f"🎉「{name}」が定価{price_note}で入荷/再販されました!\n{url}",
+            )
 
         if status != prev_status:
             state[url] = {

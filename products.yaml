@@ -1,14 +1,326 @@
 # 監視したい商品をここに追加してください。
-# name: Discord通知に表示される商品名（自由に決めてOK）
-# url : 商品ページのURL（Amazon.co.jp / ヨドバシ.com / ホビーサーチ(1999.co.jp) / プレミアムバンダイ に対応）
+# name      : Discord通知に表示される商品名(自由に決めてOK)
+# url       : 商品ページのURL(Amazon.co.jp / ヨドバシ.com / ホビーサーチ(1999.co.jp) /
+#             プレミアムバンダイ / GUNDAM SIDE-F(gundam-base.net) / 駿河屋(suruga-ya.jp) に対応)
+# max_price : (省略可)税込の定価(円)。指定すると、この価格より高い出品
+#             (転売・プレミア価格)では通知しません。省略した場合は価格を見ずに
+#             「在庫あり」になったら常に通知します。
 #
 # 一時的に監視を止めたい場合は disabled: true を追加してください。
+#
+# 以下はユーザー指定の19点のガンプラについて、見つかった各サイトの商品ページを
+# 全て登録したものです(1商品につき複数サイト分のエントリがあります)。
 
 products:
-  - name: "サンプル: HG 001 ガンダム"
-    url: "https://www.amazon.co.jp/dp/XXXXXXXXXX"
-    disabled: true
-
-  - name: "サンプル: MG ○○ Ver.Ka"
-    url: "https://www.1999.co.jp/itembig/XXXXXXXX"
-    disabled: true
+- name: MG ガンダムF91 Ver.2.0 [Amazon]
+  url: https://www.amazon.co.jp/dp/B08XVZFBY9
+  max_price: 4840
+- name: MG ガンダムF91 Ver.2.0 [ヨドバシ]
+  url: https://www.yodobashi.com/product/100000001003832543/
+  max_price: 4840
+- name: MG ガンダムF91 Ver.2.0 [ホビーサーチ]
+  url: https://www.1999.co.jp/10522238
+  max_price: 4840
+- name: MG ガンダムF91 Ver.2.0 [駿河屋]
+  url: https://www.suruga-ya.jp/product/detail/603164957
+  max_price: 4840
+- name: MG ターンエーガンダム [Amazon]
+  url: https://www.amazon.co.jp/dp/B000RHKZLU
+  max_price: 4840
+- name: MG ターンエーガンダム [ヨドバシ]
+  url: https://www.yodobashi.com/product/100000001000906896/
+  max_price: 4840
+- name: MG ターンエーガンダム [ホビーサーチ]
+  url: https://www.1999.co.jp/10011141
+  max_price: 4840
+- name: MG ターンエーガンダム [駿河屋]
+  url: https://www.suruga-ya.jp/product/detail/603000498
+  max_price: 4840
+- name: MG ターンエックス [Amazon]
+  url: https://www.amazon.co.jp/dp/B00J4G4FNE
+  max_price: 7040
+- name: MG ターンエックス [ヨドバシ]
+  url: https://www.yodobashi.com/product/100000001009367636/
+  max_price: 7040
+- name: MG ターンエックス [駿河屋]
+  url: https://www.suruga-ya.jp/product/detail/603227169
+  max_price: 7040
+- name: MGSD ウイングガンダムゼロEW [Amazon]
+  url: https://www.amazon.co.jp/dp/B0D5XRM3TV
+  max_price: 4950
+- name: MGSD ウイングガンダムゼロEW [ヨドバシ]
+  url: https://www.yodobashi.com/product/100000001008517513/
+  max_price: 4950
+- name: MGSD ウイングガンダムゼロEW [ホビーサーチ]
+  url: https://www.1999.co.jp/11092983
+  max_price: 4950
+- name: MGSD ウイングガンダムゼロEW [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000222394/
+  max_price: 4950
+- name: MGSD ウイングガンダムゼロEW [駿河屋]
+  url: https://www.suruga-ya.jp/product/detail/603209352
+  max_price: 4950
+- name: RG トールギスEW(標準版) [Amazon]
+  url: https://www.amazon.co.jp/dp/B079DL99KC
+  max_price: 3080
+- name: RG トールギスEW(標準版) [ヨドバシ]
+  url: https://www.yodobashi.com/product/100000001006237060/
+  max_price: 3080
+- name: RG トールギスEW(標準版) [ホビーサーチ]
+  url: https://www.1999.co.jp/10516419
+  max_price: 3080
+- name: RG トールギスEW(標準版) [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000150058/
+  max_price: 3080
+- name: RG トールギスEW(標準版) [駿河屋]
+  url: https://www.suruga-ya.jp/product/detail/603089201
+  max_price: 3080
+- name: RG トールギスII(プレバン限定) [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000236968/
+  max_price: 3080
+- name: RG トールギスII(プレバン限定) [駿河屋]
+  url: https://www.suruga-ya.jp/product/detail/603096789
+  max_price: 3080
+- name: RG トールギスIII(プレバン限定) [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000225002/
+  max_price: 3410
+- name: RG トールギスIII(プレバン限定) [駿河屋]
+  url: https://www.suruga-ya.jp/product/detail/603102535
+  max_price: 3410
+- name: RG トールギスEW[チタニウムフィニッシュ] [Amazon]
+  url: https://www.amazon.co.jp/dp/B07HF9NXP2
+  max_price: 6820
+- name: RG トールギスEW[チタニウムフィニッシュ] [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000128332/
+  max_price: 6820
+- name: RG トールギスIII[チタニウムフィニッシュ](プレバン限定) [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000164563/
+  max_price: 7700
+- name: RG トールギスIII[チタニウムフィニッシュ](プレバン限定) [駿河屋]
+  url: https://www.suruga-ya.jp/product/detail/603129343
+  max_price: 7700
+- name: RG フォースインパルスガンダム(通常版) [Amazon]
+  url: https://www.amazon.co.jp/dp/B083KLVSCX
+  max_price: 3300
+- name: RG フォースインパルスガンダム(通常版) [ヨドバシ]
+  url: https://www.yodobashi.com/product/100000001005357784/
+  max_price: 3300
+- name: RG フォースインパルスガンダム(通常版) [ホビーサーチ]
+  url: https://www.1999.co.jp/10667789
+  max_price: 3300
+- name: RG フォースインパルスガンダム(通常版) [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000148163/
+  max_price: 3300
+- name: RG フォースインパルスガンダム(通常版) [駿河屋]
+  url: https://www.suruga-ya.jp/product/detail/603190029
+  max_price: 3300
+- name: RG フォースインパルスガンダム SpecII [Amazon]
+  url: https://www.amazon.co.jp/dp/B0CKDYX776
+  max_price: 3410
+- name: RG フォースインパルスガンダム SpecII [ヨドバシ]
+  url: https://www.yodobashi.com/product/100000001008122620/
+  max_price: 3410
+- name: RG フォースインパルスガンダム SpecII [ホビーサーチ]
+  url: https://www.1999.co.jp/11026194
+  max_price: 3410
+- name: RG フォースインパルスガンダム SpecII [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000208054/
+  max_price: 3410
+- name: RG フォースインパルスガンダム SpecII [駿河屋]
+  url: https://www.suruga-ya.jp/product/detail/603173782
+  max_price: 3410
+- name: RG ビルドストライクガンダム フルパッケージ [Amazon]
+  url: https://www.amazon.co.jp/dp/B01LX4WDRM
+  max_price: 2750
+- name: RG ビルドストライクガンダム フルパッケージ [ヨドバシ]
+  url: https://www.yodobashi.com/product/100000001003284424/
+  max_price: 2750
+- name: RG ビルドストライクガンダム フルパッケージ [ホビーサーチ]
+  url: https://www.1999.co.jp/10420337
+  max_price: 2750
+- name: RG ビルドストライクガンダム フルパッケージ [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000142642/
+  max_price: 2750
+- name: RG ビルドストライクガンダム フルパッケージ [駿河屋]
+  url: https://www.suruga-ya.jp/product/detail/603129601
+  max_price: 2750
+- name: RG ウイングガンダムゼロ(アニメ版) [Amazon]
+  url: https://www.amazon.co.jp/dp/B0DXDWG6WG
+  max_price: 4620
+- name: RG ウイングガンダムゼロ(アニメ版) [ヨドバシ]
+  url: https://www.yodobashi.com/product/100000001008949835/
+  max_price: 4620
+- name: RG ウイングガンダムゼロ(アニメ版) [ホビーサーチ]
+  url: https://www.1999.co.jp/11174884
+  max_price: 4620
+- name: RG ウイングガンダムゼロ(アニメ版) [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000238314/
+  max_price: 4620
+- name: HG インフィニットジャスティスガンダム弐式 [Amazon]
+  url: https://www.amazon.co.jp/dp/B0CTBLDWWK
+  max_price: 2800
+- name: HG インフィニットジャスティスガンダム弐式 [ヨドバシ]
+  url: https://www.yodobashi.com/product/100000001008280664/
+  max_price: 2800
+- name: HG インフィニットジャスティスガンダム弐式 [ホビーサーチ]
+  url: https://www.1999.co.jp/11058460
+  max_price: 2800
+- name: HG インフィニットジャスティスガンダム弐式 [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000213431/
+  max_price: 2800
+- name: HG インフィニットジャスティスガンダム弐式 [駿河屋]
+  url: https://www.suruga-ya.jp/product/detail/603197482
+  max_price: 2800
+- name: HGUC グフ・フライトタイプ(通常色/プレバン限定) [Amazon]
+  url: https://www.amazon.co.jp/dp/B07CGMG5GY
+  max_price: 2310
+- name: HGUC グフ・フライトタイプ(通常色/プレバン限定) [ヨドバシ]
+  url: https://www.yodobashi.com/product/000000677301053614/
+  max_price: 2310
+- name: HGUC グフ・フライトタイプ(通常色/プレバン限定) [ホビーサーチ]
+  url: https://www.1999.co.jp/10011173
+  max_price: 2310
+- name: HGUC グフ・フライトタイプ(通常色/プレバン限定) [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000126777/
+  max_price: 2310
+- name: HG グフ・フライトタイプ[21stCENTURY REAL TYPE Ver.](ガンダムベース限定) [Amazon]
+  url: https://www.amazon.co.jp/dp/B0F9FXZ4N7
+  max_price: 2970
+- name: HG グフ・フライトタイプ[21stCENTURY REAL TYPE Ver.](ガンダムベース限定) [GUNDAM SIDE-F]
+  url: https://www.gundam-base.net/products/details.php?path=01_2459
+  max_price: 2970
+- name: MG ジェガン [Amazon]
+  url: https://www.amazon.co.jp/dp/B07CNH9QDD
+  max_price: 4840
+- name: MG ジェガン [ヨドバシ]
+  url: https://www.yodobashi.com/product/100000001003879049/
+  max_price: 4840
+- name: MG ジェガン [ホビーサーチ]
+  url: https://www.1999.co.jp/10024408
+  max_price: 4840
+- name: MG ジェガン [駿河屋]
+  url: https://www.suruga-ya.jp/product/detail/603092066
+  max_price: 4840
+- name: RE/100 デナン・ゲー(プレバン限定) [Amazon]
+  url: https://www.amazon.co.jp/dp/B0FPPWPXL9
+  max_price: 3300
+- name: RE/100 デナン・ゲー(プレバン限定) [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000236998/
+  max_price: 3300
+- name: RE/100 デナン・ゲー(プレバン限定) [駿河屋]
+  url: https://www.suruga-ya.jp/product/other/603222690
+  max_price: 3300
+- name: HGBF ガンダムフェニーチェリナーシタ [Amazon]
+  url: https://www.amazon.co.jp/dp/B00LGBMHZI
+  max_price: 1980
+- name: HGBF ガンダムフェニーチェリナーシタ [ヨドバシ]
+  url: https://www.yodobashi.com/product/100000001002341362/
+  max_price: 1980
+- name: HGBF ガンダムフェニーチェリナーシタ [ホビーサーチ]
+  url: https://www.1999.co.jp/10282801
+  max_price: 1980
+- name: HGBF ガンダムフェニーチェリナーシタ [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000129065/
+  max_price: 1980
+- name: HGBF ガンダムフェニーチェリナーシタ [駿河屋]
+  url: https://www.suruga-ya.jp/product/detail/603197431
+  max_price: 1980
+- name: MG ガンダムフェニーチェリナーシタ [Amazon]
+  url: https://www.amazon.co.jp/dp/B00VJKHPJO
+  max_price: 5280
+- name: MG ガンダムフェニーチェリナーシタ [ホビーサーチ]
+  url: https://www.1999.co.jp/10319728
+  max_price: 5280
+- name: MG ガンダムフェニーチェリナーシタ [駿河屋]
+  url: https://www.suruga-ya.jp/product/detail/603055965
+  max_price: 5280
+- name: RG クロスボーンガンダムX1 [Amazon]
+  url: https://www.amazon.co.jp/dp/B07P5QVBKJ
+  max_price: 2750
+- name: RG クロスボーンガンダムX1 [ヨドバシ]
+  url: https://www.yodobashi.com/product/100000001004280902/
+  max_price: 2750
+- name: RG クロスボーンガンダムX1 [ホビーサーチ]
+  url: https://www.1999.co.jp/10595718
+  max_price: 2750
+- name: RG クロスボーンガンダムX1 [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000142328/
+  max_price: 2750
+- name: RG クロスボーンガンダムX1 [駿河屋]
+  url: https://www.suruga-ya.jp/product/other/603100240
+  max_price: 2750
+- name: HG ドム試作実験機(THE ORIGIN関連 MSDシリーズ) [Amazon]
+  url: https://www.amazon.co.jp/dp/B018TGV5EG
+  max_price: 2420
+- name: HG ドム試作実験機(THE ORIGIN関連 MSDシリーズ) [ヨドバシ]
+  url: https://www.yodobashi.com/product/100000001002959731/
+  max_price: 2420
+- name: HG ドム試作実験機(THE ORIGIN関連 MSDシリーズ) [ホビーサーチ]
+  url: https://www.1999.co.jp/10361684
+  max_price: 2420
+- name: HG ドム試作実験機(THE ORIGIN関連 MSDシリーズ) [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000134566/
+  max_price: 2420
+- name: HG ドム試作実験機(THE ORIGIN関連 MSDシリーズ) [駿河屋]
+  url: https://www.suruga-ya.jp/product/detail/603105648
+  max_price: 2420
+- name: RE/100 ビギナ・ギナ [Amazon]
+  url: https://www.amazon.co.jp/dp/B07B3KQHT5
+  max_price: 3520
+- name: RE/100 ビギナ・ギナ [ヨドバシ]
+  url: https://www.yodobashi.com/product/100000001003832547/
+  max_price: 3520
+- name: RE/100 ビギナ・ギナ [ホビーサーチ]
+  url: https://www.1999.co.jp/10522261
+  max_price: 3520
+- name: RE/100 ビギナ・ギナ [駿河屋]
+  url: https://www.suruga-ya.jp/product/detail/603090144
+  max_price: 3520
+- name: HGBF クロスボーンガンダム魔王 [Amazon]
+  url: https://www.amazon.co.jp/dp/B00IP5QQ9Q
+  max_price: 1980
+- name: HGBF クロスボーンガンダム魔王 [ヨドバシ]
+  url: https://www.yodobashi.com/product/100000001002141960/
+  max_price: 1980
+- name: HGBF クロスボーンガンダム魔王 [ホビーサーチ]
+  url: https://www.1999.co.jp/10261907
+  max_price: 1980
+- name: HGBF クロスボーンガンダム魔王 [駿河屋]
+  url: https://www.suruga-ya.jp/product/detail/603042087
+  max_price: 1980
+- name: MG ガンダムAGEIIマグナム(ビルドダイバーズ) [Amazon]
+  url: https://www.amazon.co.jp/dp/B07KZD2TV9
+  max_price: 6490
+- name: MG ガンダムAGEIIマグナム(ビルドダイバーズ) [ヨドバシ]
+  url: https://www.yodobashi.com/product/100000001004191781/
+  max_price: 6490
+- name: MG ガンダムAGEIIマグナム(ビルドダイバーズ) [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000249649/
+  max_price: 6490
+- name: MG ガンダムAGEIIマグナム(ビルドダイバーズ) [駿河屋]
+  url: https://www.suruga-ya.jp/product/other/603098141
+  max_price: 6490
+- name: RE/100 ナイチンゲール [Amazon]
+  url: https://www.amazon.co.jp/dp/B00KRVJC2O
+  max_price: 8640
+- name: RE/100 ナイチンゲール [ヨドバシ]
+  url: https://www.yodobashi.com/product/100000001002323411/
+  max_price: 8640
+- name: RE/100 ナイチンゲール [ホビーサーチ]
+  url: https://www.1999.co.jp/10278543
+  max_price: 8640
+- name: RE/100 ナイチンゲール [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000093127/
+  max_price: 8640
+- name: RE/100 ナイチンゲール [駿河屋]
+  url: https://www.suruga-ya.jp/product/detail/603171775
+  max_price: 8640
+- name: HGUC ナイチンゲール [Amazon]
+  url: https://www.amazon.co.jp/dp/B092RMH6WD
+  max_price: 7700
+- name: HGUC ナイチンゲール [ヨドバシ]
+  url: https://www.yodobashi.com/product/100000001006095277/
+  max_price: 7700
+- name: HGUC ナイチンゲール [ホビーサーチ]
+  url: https://www.1999.co.jp/10777705
+  max_price: 7700
