@@ -324,3 +324,15 @@ products:
 - name: HGUC ナイチンゲール [ホビーサーチ]
   url: https://www.1999.co.jp/10777705
   max_price: 7700
+- name: MG ガンダムバルバトスルプス [Amazon]
+  url: https://www.amazon.co.jp/BANDAI-SPIRITS-バンダイ-スピリッツ-ガンダムバルバトスルプス/dp/B0FBLRWDY4
+  max_price: 7150
+- name: MG ガンダムバルバトスルプス [ヨドバシ]
+  url: https://www.yodobashi.com/product/100000001009159003/
+  max_price: 7150
+- name: MG ガンダムバルバトスルプス [ホビーサーチ]
+  url: https://www.1999.co.jp/11210920
+  max_price: 7150
+- name: MG ガンダムバルバトスルプス [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000241880/
+  max_price: 7150
