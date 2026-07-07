@@ -336,3 +336,12 @@ products:
 - name: MG ガンダムバルバトスルプス [プレミアムバンダイ]
   url: https://p-bandai.jp/item/item-1000241880/
   max_price: 7150
+- name: MG ガンダムバルバトスルプス [駿河屋]
+  url: https://www.suruga-ya.jp/product/detail/603216507
+  max_price: 7150
+- name: MG トールギスF EW(プレバン限定) [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000236997/
+  max_price: 7040
+- name: RE/100 ビギナ・ギナ【2026年12月発送】 [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000253883/
+  max_price: 4290
