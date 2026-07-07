@@ -1,6 +1,6 @@
 # ガンプラ再販ウォッチャー
 
-Amazon.co.jp / ヨドバシ.com / ホビーサーチ(1999.co.jp) / プレミアムバンダイ の商品ページを
+Amazon.co.jp / ヨドバシ.com / ホビーサーチ(1999.co.jp) / プレミアムバンダイ/GUNDAM SIDE-F(gundam-base.net) / 駿河屋(suruga-ya.jp) の商品ページを
 定期的にチェックし、「在庫なし → 在庫あり」に変わったタイミングでDiscordに通知します。
 GitHub Actions 上で10分おきに自動実行され、費用はかかりません（リポジトリを公開設定にした場合）。
 

@@ -34,6 +34,10 @@ BLOCKED_KEYWORDS = [
     "captcha",
     "ロボットではないことを確認",
     "自動アクセスと判断",
+    "attention required",
+    "access denied",
+    "just a moment",
+    "このサイトへのアクセスが拒否されました",
 ]
 
 
@@ -100,6 +104,34 @@ def _pbandai(html: str) -> str:
     return _generic(html)
 
 
+def _gundam_base(html: str) -> str:
+    """THE GUNDAM BASE / GUNDAM SIDE-F の店舗別在庫表示に対応。
+
+    商品ページには「GUNDAM SIDE-F在庫: 在庫あり」のように店舗ごとの
+    在庫が文字で列挙されている（在庫なしの場合は「-」）。
+    """
+    text = _text(html)
+    if any(k in text for k in BLOCKED_KEYWORDS):
+        return "blocked"
+    idx = text.find("side-f在庫")
+    if idx != -1:
+        window = text[idx: idx + 30]
+        return "in_stock" if "在庫あり" in window else "out_of_stock"
+    return _generic(html)
+
+
+def _surugaya(html: str) -> str:
+    """駿河屋。ボット対策が強く、GitHub ActionsのIPだとブロックされやすい点に注意。"""
+    text = _text(html)
+    if any(k in text for k in BLOCKED_KEYWORDS):
+        return "blocked"
+    if "品切れ" in text or "売り切れ" in text:
+        return "out_of_stock"
+    if "カートに入れる" in text or "買い物カゴに入れる" in text:
+        return "in_stock"
+    return _generic(html)
+
+
 _DOMAIN_CHECKERS = {
     "amazon.co.jp": _amazon,
     "www.amazon.co.jp": _amazon,
@@ -111,6 +143,12 @@ _DOMAIN_CHECKERS = {
     "premium-bandai.jp": _pbandai,
     "www.p-bandai.jp": _pbandai,
     "www.premium-bandai.jp": _pbandai,
+    "gundam-base.net": _gundam_base,
+    "www.gundam-base.net": _gundam_base,
+    "gundam-side-f.net": _gundam_base,
+    "www.gundam-side-f.net": _gundam_base,
+    "suruga-ya.jp": _surugaya,
+    "www.suruga-ya.jp": _surugaya,
 }
 
 
