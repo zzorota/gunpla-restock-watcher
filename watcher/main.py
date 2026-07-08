@@ -79,10 +79,25 @@ def fetch(url: str) -> str:
     return resp.text
 
 
-def fetch_with_browser(page, url: str) -> str:
-    page.goto(url, timeout=30000, wait_until="domcontentloaded")
-    page.wait_for_timeout(2000)
-    return page.content()
+def fetch_with_browser(browser, url: str) -> str:
+    """URLごとに新しいブラウザコンテキスト(Cookie等をリセットした状態)で取得する。
+
+    同じコンテキストを使い回して連続アクセスすると、駿河屋のCloudflare対策に
+    セッション単位でブロックされることが確認できたため、1件ごとに毎回
+    まっさらな状態で見に行くようにしている。
+    """
+    context = browser.new_context(
+        user_agent=HEADERS["User-Agent"],
+        locale="ja-JP",
+        extra_http_headers={"Accept-Language": HEADERS["Accept-Language"]},
+    )
+    try:
+        page = context.new_page()
+        page.goto(url, timeout=30000, wait_until="domcontentloaded")
+        page.wait_for_timeout(2000)
+        return page.content()
+    finally:
+        context.close()
 
 
 def main() -> None:
@@ -109,16 +124,9 @@ def main() -> None:
 
     browser = None
     playwright_cm = None
-    page = None
     if mode == "local":
         playwright_cm = sync_playwright().start()
         browser = playwright_cm.chromium.launch()
-        context = browser.new_context(
-            user_agent=HEADERS["User-Agent"],
-            locale="ja-JP",
-            extra_http_headers={"Accept-Language": HEADERS["Accept-Language"]},
-        )
-        page = context.new_page()
 
     try:
         for product in products:
@@ -130,7 +138,7 @@ def main() -> None:
 
             try:
                 if mode == "local":
-                    html = fetch_with_browser(page, url)
+                    html = fetch_with_browser(browser, url)
                 else:
                     html = fetch(url)
                 status = get_status(url, html)
