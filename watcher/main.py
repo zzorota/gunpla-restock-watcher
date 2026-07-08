@@ -2,6 +2,15 @@
 
 products.yaml に列挙した商品ページを定期的にチェックし、
 「在庫なし → 在庫あり」に変化したタイミングでDiscordに通知する。
+
+WATCHER_MODE 環境変数で動作を切り替える:
+  cloud (デフォルト): Amazon・駿河屋"以外"を対象に、通常のHTTP取得でチェックする。
+                      GitHub Actions側で使う。
+  local             : Amazon・駿河屋"だけ"を対象に、ヘッドレスブラウザ(Playwright)で
+                      チェックする。GitHub ActionsのIPだとこの2サイトはボット判定
+                      されて正しく取得できないため、ローカルPC(自分の回線)から
+                      実行する用。状態は state.local.json に保存し、
+                      GitHubにはコミットしない(.gitignore済み)。
 """
 
 import json
@@ -21,6 +30,7 @@ from watcher.notifier import send_discord
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 STATE_PATH = ROOT_DIR / "state.json"
+LOCAL_STATE_PATH = ROOT_DIR / "state.local.json"
 PRODUCTS_PATH = ROOT_DIR / "products.yaml"
 
 HEADERS = {
@@ -31,8 +41,9 @@ HEADERS = {
     "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
 }
 
-# Amazon・駿河屋はボット対策が厳しく、単純な取得だと正しく判定できないことが
-# 多いため、この2サイトだけヘッドレスブラウザ(Playwright)で見に行く。
+# Amazon・駿河屋はボット対策が厳しく、GitHub ActionsのIPからだと
+# ヘッドレスブラウザで見に行ってもブロックされる。ローカルPCからだけ
+# チェックする対象として切り分ける。
 BROWSER_DOMAINS = {
     "amazon.co.jp",
     "www.amazon.co.jp",
@@ -46,14 +57,14 @@ def load_products() -> list[dict]:
     return [p for p in data.get("products", []) if not p.get("disabled")]
 
 
-def load_state() -> dict:
-    if STATE_PATH.exists():
-        return json.loads(STATE_PATH.read_text(encoding="utf-8"))
+def load_state(state_path: Path) -> dict:
+    if state_path.exists():
+        return json.loads(state_path.read_text(encoding="utf-8"))
     return {}
 
 
-def save_state(state: dict) -> None:
-    STATE_PATH.write_text(
+def save_state(state: dict, state_path: Path) -> None:
+    state_path.write_text(
         json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8"
     )
 
@@ -80,16 +91,28 @@ def main() -> None:
         print("DISCORD_WEBHOOK_URL が設定されていません", file=sys.stderr)
         sys.exit(1)
 
-    products = load_products()
+    mode = os.environ.get("WATCHER_MODE", "cloud")
+    all_products = load_products()
+    if mode == "local":
+        products = [p for p in all_products if needs_browser(p["url"])]
+        state_path = LOCAL_STATE_PATH
+    else:
+        products = [p for p in all_products if not needs_browser(p["url"])]
+        state_path = STATE_PATH
+
     if not products:
-        print("products.yaml に有効な商品がありません（disabled: true になっていないか確認してください）")
+        print(f"products.yaml に有効な商品がありません（mode={mode}）")
         return
 
-    state = load_state()
+    state = load_state(state_path)
     changed = False
 
-    with sync_playwright() as p:
-        browser = p.chromium.launch()
+    browser = None
+    playwright_cm = None
+    page = None
+    if mode == "local":
+        playwright_cm = sync_playwright().start()
+        browser = playwright_cm.chromium.launch()
         context = browser.new_context(
             user_agent=HEADERS["User-Agent"],
             locale="ja-JP",
@@ -97,6 +120,7 @@ def main() -> None:
         )
         page = context.new_page()
 
+    try:
         for product in products:
             name = product["name"]
             url = product["url"]
@@ -105,7 +129,7 @@ def main() -> None:
             is_first_check = prev_entry is None
 
             try:
-                if needs_browser(url):
+                if mode == "local":
                     html = fetch_with_browser(page, url)
                 else:
                     html = fetch(url)
@@ -151,11 +175,14 @@ def main() -> None:
                 changed = True
 
             time.sleep(random.uniform(1.5, 3.5))
-
-        browser.close()
+    finally:
+        if browser is not None:
+            browser.close()
+        if playwright_cm is not None:
+            playwright_cm.stop()
 
     if changed:
-        save_state(state)
+        save_state(state, state_path)
 
 
 if __name__ == "__main__":
