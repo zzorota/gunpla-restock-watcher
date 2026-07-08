@@ -1,8 +1,8 @@
 {
   "https://www.amazon.co.jp/dp/B08XVZFBY9": {
     "name": "MG ガンダムF91 Ver.2.0 [Amazon]",
-    "status": "unknown",
-    "checked_at": "2026-07-08T07:30:46"
+    "status": "in_stock_overpriced",
+    "checked_at": "2026-07-08T08:10:38"
   },
   "https://www.amazon.co.jp/dp/B000RHKZLU": {
     "name": "MG ターンエーガンダム [Amazon]",
@@ -61,8 +61,8 @@
   },
   "https://www.amazon.co.jp/dp/B083KLVSCX": {
     "name": "RG フォースインパルスガンダム(通常版) [Amazon]",
-    "status": "in_stock_overpriced",
-    "checked_at": "2026-07-08T08:01:24"
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:11:14"
   },
   "https://p-bandai.jp/item/item-1000148163/": {
     "name": "RG フォースインパルスガンダム(通常版) [プレミアムバンダイ]",
