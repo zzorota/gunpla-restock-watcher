@@ -7,9 +7,6 @@
 #             「在庫あり」になったら常に通知します。
 #
 # 一時的に監視を止めたい場合は disabled: true を追加してください。
-#
-# 以下はユーザー指定の19点のガンプラについて、見つかった各サイトの商品ページを
-# 全て登録したものです(1商品につき複数サイト分のエントリがあります)。
 
 products:
 - name: MG ガンダムF91 Ver.2.0 [Amazon]
@@ -23,18 +20,6 @@ products:
   max_price: 4840
 - name: MG ガンダムF91 Ver.2.0 [駿河屋]
   url: https://www.suruga-ya.jp/product/detail/603164957
-  max_price: 4840
-- name: MG ターンエーガンダム [Amazon]
-  url: https://www.amazon.co.jp/dp/B000RHKZLU
-  max_price: 4840
-- name: MG ターンエーガンダム [ヨドバシ]
-  url: https://www.yodobashi.com/product/100000001000906896/
-  max_price: 4840
-- name: MG ターンエーガンダム [ホビーサーチ]
-  url: https://www.1999.co.jp/10011141
-  max_price: 4840
-- name: MG ターンエーガンダム [駿河屋]
-  url: https://www.suruga-ya.jp/product/detail/603000498
   max_price: 4840
 - name: MG ターンエックス [Amazon]
   url: https://www.amazon.co.jp/dp/B00J4G4FNE
@@ -87,18 +72,15 @@ products:
 - name: RG トールギスIII(プレバン限定) [駿河屋]
   url: https://www.suruga-ya.jp/product/detail/603102535
   max_price: 3410
-- name: RG トールギスEW[チタニウムフィニッシュ] [Amazon]
-  url: https://www.amazon.co.jp/dp/B07HF9NXP2
-  max_price: 6820
-- name: RG トールギスEW[チタニウムフィニッシュ] [プレミアムバンダイ]
-  url: https://p-bandai.jp/item/item-1000128332/
-  max_price: 6820
 - name: RG トールギスIII[チタニウムフィニッシュ](プレバン限定) [プレミアムバンダイ]
   url: https://p-bandai.jp/item/item-1000164563/
   max_price: 7700
 - name: RG トールギスIII[チタニウムフィニッシュ](プレバン限定) [駿河屋]
   url: https://www.suruga-ya.jp/product/detail/603129343
   max_price: 7700
+- name: MG トールギスF EW(プレバン限定) [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000236997/
+  max_price: 7040
 - name: RG フォースインパルスガンダム(通常版) [Amazon]
   url: https://www.amazon.co.jp/dp/B083KLVSCX
   max_price: 3300
@@ -158,25 +140,24 @@ products:
   max_price: 4620
 - name: HG インフィニットジャスティスガンダム弐式 [Amazon]
   url: https://www.amazon.co.jp/dp/B0CTBLDWWK
-  max_price: 2800
+  max_price: 3080
 - name: HG インフィニットジャスティスガンダム弐式 [ヨドバシ]
   url: https://www.yodobashi.com/product/100000001008280664/
-  max_price: 2800
+  max_price: 3080
 - name: HG インフィニットジャスティスガンダム弐式 [ホビーサーチ]
   url: https://www.1999.co.jp/11058460
-  max_price: 2800
+  max_price: 3080
 - name: HG インフィニットジャスティスガンダム弐式 [プレミアムバンダイ]
   url: https://p-bandai.jp/item/item-1000213431/
-  max_price: 2800
+  max_price: 3080
 - name: HG インフィニットジャスティスガンダム弐式 [駿河屋]
   url: https://www.suruga-ya.jp/product/detail/603197482
-  max_price: 2800
+  max_price: 3080
 - name: HGUC グフ・フライトタイプ(通常色/プレバン限定) [Amazon]
   url: https://www.amazon.co.jp/dp/B07CGMG5GY
   max_price: 2310
 - name: HGUC グフ・フライトタイプ(通常色/プレバン限定) [ヨドバシ]
   url: https://www.yodobashi.com/product/000000677301053614/
-  max_price: 2310
 - name: HGUC グフ・フライトタイプ(通常色/プレバン限定) [ホビーサーチ]
   url: https://www.1999.co.jp/10011173
   max_price: 2310
@@ -185,10 +166,10 @@ products:
   max_price: 2310
 - name: HG グフ・フライトタイプ[21stCENTURY REAL TYPE Ver.](ガンダムベース限定) [Amazon]
   url: https://www.amazon.co.jp/dp/B0F9FXZ4N7
-  max_price: 2970
+  max_price: 2750
 - name: HG グフ・フライトタイプ[21stCENTURY REAL TYPE Ver.](ガンダムベース限定) [GUNDAM SIDE-F]
   url: https://www.gundam-base.net/products/details.php?path=01_2459
-  max_price: 2970
+  max_price: 2750
 - name: MG ジェガン [Amazon]
   url: https://www.amazon.co.jp/dp/B07CNH9QDD
   max_price: 4840
@@ -266,16 +247,19 @@ products:
   max_price: 2420
 - name: RE/100 ビギナ・ギナ [Amazon]
   url: https://www.amazon.co.jp/dp/B07B3KQHT5
-  max_price: 3520
+  max_price: 4290
 - name: RE/100 ビギナ・ギナ [ヨドバシ]
   url: https://www.yodobashi.com/product/100000001003832547/
-  max_price: 3520
+  max_price: 4290
 - name: RE/100 ビギナ・ギナ [ホビーサーチ]
   url: https://www.1999.co.jp/10522261
-  max_price: 3520
+  max_price: 4290
 - name: RE/100 ビギナ・ギナ [駿河屋]
   url: https://www.suruga-ya.jp/product/detail/603090144
-  max_price: 3520
+  max_price: 4290
+- name: RE/100 ビギナ・ギナ【2026年12月発送】 [プレミアムバンダイ]
+  url: https://p-bandai.jp/item/item-1000253883/
+  max_price: 4290
 - name: HGBF クロスボーンガンダム魔王 [Amazon]
   url: https://www.amazon.co.jp/dp/B00IP5QQ9Q
   max_price: 1980
@@ -302,19 +286,19 @@ products:
   max_price: 6490
 - name: RE/100 ナイチンゲール [Amazon]
   url: https://www.amazon.co.jp/dp/B00KRVJC2O
-  max_price: 8640
+  max_price: 8800
 - name: RE/100 ナイチンゲール [ヨドバシ]
   url: https://www.yodobashi.com/product/100000001002323411/
-  max_price: 8640
+  max_price: 8800
 - name: RE/100 ナイチンゲール [ホビーサーチ]
   url: https://www.1999.co.jp/10278543
-  max_price: 8640
+  max_price: 8800
 - name: RE/100 ナイチンゲール [プレミアムバンダイ]
   url: https://p-bandai.jp/item/item-1000093127/
-  max_price: 8640
+  max_price: 8800
 - name: RE/100 ナイチンゲール [駿河屋]
   url: https://www.suruga-ya.jp/product/detail/603171775
-  max_price: 8640
+  max_price: 8800
 - name: HGUC ナイチンゲール [Amazon]
   url: https://www.amazon.co.jp/dp/B092RMH6WD
   max_price: 7700
@@ -339,33 +323,9 @@ products:
 - name: MG ガンダムバルバトスルプス [駿河屋]
   url: https://www.suruga-ya.jp/product/detail/603216507
   max_price: 7150
-- name: MG トールギスF EW(プレバン限定) [プレミアムバンダイ]
-  url: https://p-bandai.jp/item/item-1000236997/
-  max_price: 7040
-- name: RE/100 ビギナ・ギナ【2026年12月発送】 [プレミアムバンダイ]
-  url: https://p-bandai.jp/item/item-1000253883/
-  max_price: 4290
 - name: HGUC ケンプファー [Amazon]
   url: https://www.amazon.co.jp/HGUC-144-%E3%82%B1%E3%83%B3%E3%83%97%E3%83%95%E3%82%A1%E3%83%BC-%E6%A9%9F%E5%8B%95%E6%88%A6%E5%A3%AB%E3%82%AC%E3%83%B3%E3%83%80%E3%83%A00080-%E3%83%9D%E3%82%B1%E3%83%83%E3%83%88%E3%81%AE%E4%B8%AD%E3%81%AE%E6%88%A6%E4%BA%89/dp/B07T9BXR2W
   max_price: 2200
 - name: HGUC ケンプファー [駿河屋]
   url: https://www.suruga-ya.jp/product/detail/603151160
   max_price: 2200
-- name: RE/100 ヤクト・ドーガ(クェス・エア機) [Amazon]
-  url: https://www.amazon.co.jp/dp/B07KT38XM6
-  max_price: 5390
-- name: RE/100 ヤクト・ドーガ(クェス・エア機) [駿河屋]
-  url: https://www.suruga-ya.jp/product/detail/603097158
-  max_price: 5390
-- name: RE/100 ヤクト・ドーガ(ギュネイ・ガス機) [Amazon]
-  url: https://www.amazon.co.jp/dp/B07DW679PN
-  max_price: 4950
-- name: RE/100 ヤクト・ドーガ(ギュネイ・ガス機) [駿河屋]
-  url: https://www.suruga-ya.jp/product/detail/603093743
-  max_price: 4950
-- name: HGUC ヤクト・ドーガ(クェス・エア専用機) [Amazon]
-  url: https://www.amazon.co.jp/dp/B07SGDQ142
-  max_price: 2860
-- name: HGUC ヤクト・ドーガ(ギュネイ・ガス専用機) [Amazon]
-  url: https://www.amazon.co.jp/dp/B07SHGPLZN
-  max_price: 2860
