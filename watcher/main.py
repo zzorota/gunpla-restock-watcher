@@ -10,9 +10,11 @@ import random
 import sys
 import time
 from pathlib import Path
+from urllib.parse import urlparse
 
 import requests
 import yaml
+from playwright.sync_api import sync_playwright
 
 from watcher.checkers import extract_price, get_status
 from watcher.notifier import send_discord
@@ -27,6 +29,15 @@ HEADERS = {
         "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
     ),
     "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
+}
+
+# Amazon・駿河屋はボット対策が厳しく、単純な取得だと正しく判定できないことが
+# 多いため、この2サイトだけヘッドレスブラウザ(Playwright)で見に行く。
+BROWSER_DOMAINS = {
+    "amazon.co.jp",
+    "www.amazon.co.jp",
+    "suruga-ya.jp",
+    "www.suruga-ya.jp",
 }
 
 
@@ -47,10 +58,20 @@ def save_state(state: dict) -> None:
     )
 
 
+def needs_browser(url: str) -> bool:
+    return urlparse(url).netloc.lower() in BROWSER_DOMAINS
+
+
 def fetch(url: str) -> str:
     resp = requests.get(url, headers=HEADERS, timeout=20)
     resp.raise_for_status()
     return resp.text
+
+
+def fetch_with_browser(page, url: str) -> str:
+    page.goto(url, timeout=30000, wait_until="domcontentloaded")
+    page.wait_for_timeout(2000)
+    return page.content()
 
 
 def main() -> None:
@@ -67,57 +88,71 @@ def main() -> None:
     state = load_state()
     changed = False
 
-    for product in products:
-        name = product["name"]
-        url = product["url"]
-        prev_entry = state.get(url)
-        prev_status = prev_entry.get("status") if prev_entry else None
-        is_first_check = prev_entry is None
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        context = browser.new_context(
+            user_agent=HEADERS["User-Agent"],
+            locale="ja-JP",
+            extra_http_headers={"Accept-Language": HEADERS["Accept-Language"]},
+        )
+        page = context.new_page()
 
-        try:
-            html = fetch(url)
-            status = get_status(url, html)
-        except Exception as e:
-            print(f"[ERROR] {name}: {e}")
-            continue
+        for product in products:
+            name = product["name"]
+            url = product["url"]
+            prev_entry = state.get(url)
+            prev_status = prev_entry.get("status") if prev_entry else None
+            is_first_check = prev_entry is None
 
-        max_price = product.get("max_price")
-        price = None
-        if status == "in_stock" and max_price is not None:
-            price = extract_price(url, html)
-            if price is not None and price > max_price:
-                status = "in_stock_overpriced"
+            try:
+                if needs_browser(url):
+                    html = fetch_with_browser(page, url)
+                else:
+                    html = fetch(url)
+                status = get_status(url, html)
+            except Exception as e:
+                print(f"[ERROR] {name}: {e}")
+                continue
 
-        price_info = f" price=¥{price:,}" if price is not None else ""
-        print(f"[CHECK] {name}: {prev_status} -> {status}{price_info}")
+            max_price = product.get("max_price")
+            price = None
+            if status == "in_stock" and max_price is not None:
+                price = extract_price(url, html)
+                if price is not None and price > max_price:
+                    status = "in_stock_overpriced"
 
-        if status == "blocked" and prev_status != "blocked":
-            send_discord(
-                webhook_url,
-                f"⚠️「{name}」のチェックがブロックされました(CAPTCHA等の可能性)。\n{url}",
-            )
+            price_info = f" price=¥{price:,}" if price is not None else ""
+            print(f"[CHECK] {name}: {prev_status} -> {status}{price_info}")
 
-        if status == "in_stock" and not is_first_check and prev_status in (
-            "out_of_stock",
-            "unknown",
-            "blocked",
-            "in_stock_overpriced",
-        ):
-            price_note = f"（¥{price:,}）" if price is not None else ""
-            send_discord(
-                webhook_url,
-                f"🎉「{name}」が定価{price_note}で入荷/再販されました!\n{url}",
-            )
+            if status == "blocked" and prev_status != "blocked":
+                send_discord(
+                    webhook_url,
+                    f"⚠️「{name}」のチェックがブロックされました(CAPTCHA等の可能性)。\n{url}",
+                )
 
-        if status != prev_status:
-            state[url] = {
-                "name": name,
-                "status": status,
-                "checked_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
-            }
-            changed = True
+            if status == "in_stock" and not is_first_check and prev_status in (
+                "out_of_stock",
+                "unknown",
+                "blocked",
+                "in_stock_overpriced",
+            ):
+                price_note = f"（¥{price:,}）" if price is not None else ""
+                send_discord(
+                    webhook_url,
+                    f"🎉「{name}」が定価{price_note}で入荷/再販されました!\n{url}",
+                )
 
-        time.sleep(random.uniform(1.5, 3.5))
+            if status != prev_status:
+                state[url] = {
+                    "name": name,
+                    "status": status,
+                    "checked_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
+                }
+                changed = True
+
+            time.sleep(random.uniform(1.5, 3.5))
+
+        browser.close()
 
     if changed:
         save_state(state)
