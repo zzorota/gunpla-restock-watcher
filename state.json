@@ -1,8 +1,8 @@
 {
   "https://www.amazon.co.jp/dp/B08XVZFBY9": {
     "name": "MG ガンダムF91 Ver.2.0 [Amazon]",
-    "status": "in_stock_overpriced",
-    "checked_at": "2026-07-08T08:30:49"
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:51:07"
   },
   "https://www.amazon.co.jp/dp/B000RHKZLU": {
     "name": "MG ターンエーガンダム [Amazon]",
@@ -101,8 +101,8 @@
   },
   "https://www.amazon.co.jp/dp/B0CTBLDWWK": {
     "name": "HG インフィニットジャスティスガンダム弐式 [Amazon]",
-    "status": "unknown",
-    "checked_at": "2026-07-07T07:54:46"
+    "status": "in_stock_overpriced",
+    "checked_at": "2026-07-08T08:53:19"
   },
   "https://p-bandai.jp/item/item-1000213431/": {
     "name": "HG インフィニットジャスティスガンダム弐式 [プレミアムバンダイ]",
@@ -136,8 +136,8 @@
   },
   "https://www.amazon.co.jp/dp/B0FPPWPXL9": {
     "name": "RE/100 デナン・ゲー(プレバン限定) [Amazon]",
-    "status": "unknown",
-    "checked_at": "2026-07-08T07:09:25"
+    "status": "out_of_stock",
+    "checked_at": "2026-07-08T08:54:04"
   },
   "https://p-bandai.jp/item/item-1000236998/": {
     "name": "RE/100 デナン・ゲー(プレバン限定) [プレミアムバンダイ]",
@@ -258,5 +258,135 @@
     "name": "HGUC ヤクト・ドーガ(ギュネイ・ガス専用機) [Amazon]",
     "status": "unknown",
     "checked_at": "2026-07-08T00:38:44"
+  },
+  "https://www.suruga-ya.jp/product/detail/603164957": {
+    "name": "MG ガンダムF91 Ver.2.0 [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:51:13"
+  },
+  "https://www.suruga-ya.jp/product/detail/603000498": {
+    "name": "MG ターンエーガンダム [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:51:23"
+  },
+  "https://www.suruga-ya.jp/product/detail/603227169": {
+    "name": "MG ターンエックス [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:51:31"
+  },
+  "https://www.suruga-ya.jp/product/detail/603209352": {
+    "name": "MGSD ウイングガンダムゼロEW [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:51:43"
+  },
+  "https://www.suruga-ya.jp/product/detail/603089201": {
+    "name": "RG トールギスEW(標準版) [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:51:55"
+  },
+  "https://www.suruga-ya.jp/product/detail/603096789": {
+    "name": "RG トールギスII(プレバン限定) [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:52:03"
+  },
+  "https://www.suruga-ya.jp/product/detail/603102535": {
+    "name": "RG トールギスIII(プレバン限定) [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:52:09"
+  },
+  "https://www.suruga-ya.jp/product/detail/603129343": {
+    "name": "RG トールギスIII[チタニウムフィニッシュ](プレバン限定) [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:52:23"
+  },
+  "https://www.suruga-ya.jp/product/detail/603190029": {
+    "name": "RG フォースインパルスガンダム(通常版) [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:52:35"
+  },
+  "https://www.suruga-ya.jp/product/detail/603173782": {
+    "name": "RG フォースインパルスガンダム SpecII [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:52:50"
+  },
+  "https://www.suruga-ya.jp/product/detail/603129601": {
+    "name": "RG ビルドストライクガンダム フルパッケージ [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:53:04"
+  },
+  "https://www.suruga-ya.jp/product/detail/603197482": {
+    "name": "HG インフィニットジャスティスガンダム弐式 [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:53:27"
+  },
+  "https://www.suruga-ya.jp/product/detail/603092066": {
+    "name": "MG ジェガン [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:53:57"
+  },
+  "https://www.suruga-ya.jp/product/other/603222690": {
+    "name": "RE/100 デナン・ゲー(プレバン限定) [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:54:12"
+  },
+  "https://www.suruga-ya.jp/product/detail/603197431": {
+    "name": "HGBF ガンダムフェニーチェリナーシタ [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:54:27"
+  },
+  "https://www.suruga-ya.jp/product/detail/603055965": {
+    "name": "MG ガンダムフェニーチェリナーシタ [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:54:38"
+  },
+  "https://www.suruga-ya.jp/product/other/603100240": {
+    "name": "RG クロスボーンガンダムX1 [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:54:52"
+  },
+  "https://www.suruga-ya.jp/product/detail/603105648": {
+    "name": "HG ドム試作実験機(THE ORIGIN関連 MSDシリーズ) [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:55:08"
+  },
+  "https://www.suruga-ya.jp/product/detail/603090144": {
+    "name": "RE/100 ビギナ・ギナ [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:55:20"
+  },
+  "https://www.suruga-ya.jp/product/detail/603042087": {
+    "name": "HGBF クロスボーンガンダム魔王 [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:55:30"
+  },
+  "https://www.suruga-ya.jp/product/other/603098141": {
+    "name": "MG ガンダムAGEIIマグナム(ビルドダイバーズ) [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:55:45"
+  },
+  "https://www.suruga-ya.jp/product/detail/603171775": {
+    "name": "RE/100 ナイチンゲール [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:56:00"
+  },
+  "https://www.suruga-ya.jp/product/detail/603216507": {
+    "name": "MG ガンダムバルバトスルプス [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:56:19"
+  },
+  "https://www.suruga-ya.jp/product/detail/603151160": {
+    "name": "HGUC ケンプファー [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:56:35"
+  },
+  "https://www.suruga-ya.jp/product/detail/603097158": {
+    "name": "RE/100 ヤクト・ドーガ(クェス・エア機) [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:56:46"
+  },
+  "https://www.suruga-ya.jp/product/detail/603093743": {
+    "name": "RE/100 ヤクト・ドーガ(ギュネイ・ガス機) [駿河屋]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T08:56:57"
   }
 }
