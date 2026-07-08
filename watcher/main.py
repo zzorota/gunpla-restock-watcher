@@ -84,7 +84,7 @@ def main() -> None:
         max_price = product.get("max_price")
         price = None
         if status == "in_stock" and max_price is not None:
-                        price = extract_price(url, html)
+            price = extract_price(url, html)
             if price is not None and price > max_price:
                 status = "in_stock_overpriced"
 
