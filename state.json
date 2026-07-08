@@ -46,8 +46,8 @@
   },
   "https://www.amazon.co.jp/dp/B07HF9NXP2": {
     "name": "RG トールギスEW[チタニウムフィニッシュ] [Amazon]",
-    "status": "in_stock",
-    "checked_at": "2026-07-07T22:47:54"
+    "status": "unknown",
+    "checked_at": "2026-07-08T00:36:47"
   },
   "https://p-bandai.jp/item/item-1000128332/": {
     "name": "RG トールギスEW[チタニウムフィニッシュ] [プレミアムバンダイ]",
@@ -136,8 +136,8 @@
   },
   "https://www.amazon.co.jp/dp/B0FPPWPXL9": {
     "name": "RE/100 デナン・ゲー(プレバン限定) [Amazon]",
-    "status": "unknown",
-    "checked_at": "2026-07-07T07:55:05"
+    "status": "out_of_stock",
+    "checked_at": "2026-07-08T00:37:38"
   },
   "https://p-bandai.jp/item/item-1000236998/": {
     "name": "RE/100 デナン・ゲー(プレバン限定) [プレミアムバンダイ]",
@@ -233,5 +233,30 @@
     "name": "RE/100 ビギナ・ギナ【2026年12月発送】 [プレミアムバンダイ]",
     "status": "unknown",
     "checked_at": "2026-07-07T19:28:43"
+  },
+  "https://www.amazon.co.jp/HGUC-144-%E3%82%B1%E3%83%B3%E3%83%97%E3%83%95%E3%82%A1%E3%83%BC-%E6%A9%9F%E5%8B%95%E6%88%A6%E5%A3%AB%E3%82%AC%E3%83%B3%E3%83%80%E3%83%A00080-%E3%83%9D%E3%82%B1%E3%83%83%E3%83%88%E3%81%AE%E4%B8%AD%E3%81%AE%E6%88%A6%E4%BA%89/dp/B07T9BXR2W": {
+    "name": "HGUC ケンプファー [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T00:38:32"
+  },
+  "https://www.amazon.co.jp/dp/B07KT38XM6": {
+    "name": "RE/100 ヤクト・ドーガ(クェス・エア機) [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T00:38:35"
+  },
+  "https://www.amazon.co.jp/dp/B07DW679PN": {
+    "name": "RE/100 ヤクト・ドーガ(ギュネイ・ガス機) [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T00:38:37"
+  },
+  "https://www.amazon.co.jp/dp/B07SGDQ142": {
+    "name": "HGUC ヤクト・ドーガ(クェス・エア専用機) [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T00:38:41"
+  },
+  "https://www.amazon.co.jp/dp/B07SHGPLZN": {
+    "name": "HGUC ヤクト・ドーガ(ギュネイ・ガス専用機) [Amazon]",
+    "status": "unknown",
+    "checked_at": "2026-07-08T00:38:44"
   }
 }
