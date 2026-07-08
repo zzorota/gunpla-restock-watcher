@@ -77,7 +77,10 @@ def _amazon(html: str) -> str:
             return "in_stock"
     if soup.select_one("#add-to-cart-button") or soup.select_one("#buy-now-button"):
         return "in_stock"
-    return _generic(html)
+    # #availability が見つからない場合、ページ全文のキーワード一致には頼らない。
+    # Amazonのページには「カートに入れる」等の文字列が非表示要素にも
+    # 含まれていることが多く、誤って在庫ありと判定してしまうため。
+    return "unknown"
 
 
 def _yodobashi(html: str) -> str:
@@ -161,7 +164,56 @@ def get_status(url: str, html: str) -> str:
     return checker(html)
 
 
-def extract_price(html: str) -> int | None:
+def _parse_price_text(text: str) -> int | None:
+    m = _PRICE_RE.search(text)
+    if not m:
+        return None
+    raw = m.group(1) or m.group(2)
+    if not raw:
+        return None
+    try:
+        value = int(raw.replace(",", ""))
+    except ValueError:
+        return None
+    if 300 <= value <= 300000:
+        return value
+    return None
+
+
+def _amazon_price(html: str) -> int | None:
+    """Amazonの価格欄(#corePrice系の.a-price .a-offscreen)から価格を取る。
+
+    ページ全文からの雑な数字拾いだと、レビュー件数や関連商品の価格など
+    無関係な数字を誤って拾うことがあるため、価格欄を狙い撃ちする。
+    """
+    soup = BeautifulSoup(html, "html.parser")
+    for container_id in (
+        "corePriceDisplay_desktop_feature_div",
+        "corePrice_feature_div",
+        "corePrice_desktop",
+    ):
+        container = soup.find(id=container_id)
+        if container is not None:
+            offscreen = container.select_one(".a-price .a-offscreen")
+            if offscreen is not None:
+                price = _parse_price_text(offscreen.get_text())
+                if price is not None:
+                    return price
+    offscreen = soup.select_one("span.a-price span.a-offscreen")
+    if offscreen is not None:
+        price = _parse_price_text(offscreen.get_text())
+        if price is not None:
+            return price
+    for elem_id in ("priceblock_ourprice", "priceblock_dealprice"):
+        elem = soup.find(id=elem_id)
+        if elem is not None:
+            price = _parse_price_text(elem.get_text())
+            if price is not None:
+                return price
+    return None
+
+
+def _generic_price(html: str) -> int | None:
     """ページ内で最初に見つかった、それらしい価格(円)を返す。
 
     サイトごとの価格欄の場所までは特定していないベストエフォート実装。
@@ -182,3 +234,19 @@ def extract_price(html: str) -> int | None:
         if 300 <= value <= 300000:
             return value
     return None
+
+
+_DOMAIN_PRICE_EXTRACTORS = {
+    "amazon.co.jp": _amazon_price,
+    "www.amazon.co.jp": _amazon_price,
+}
+
+
+def extract_price(url: str, html: str) -> int | None:
+    domain = urlparse(url).netloc.lower()
+    extractor = _DOMAIN_PRICE_EXTRACTORS.get(domain)
+    if extractor is not None:
+        price = extractor(html)
+        if price is not None:
+            return price
+    return _generic_price(html)
